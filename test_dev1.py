@@ -21,9 +21,9 @@ print(f"Role: {role}")
 # Test Utils
 print("\n--- Test Menu ---")
 if role == "admin":
-    menu = ["Manage Bikes", "Manage Customers", "View Rentals", "View Repairs", "Exit"]
+    menu = ["Manage Cars", "Manage Customers", "View Rentals", "View Repairs", "Exit"]
 else:
-    menu = ["View Bikes", "Create Rental", "Exit"]
+    menu = ["View Cars", "Create Rental", "Exit"]
 
 choice = print_menu(menu)
 print(f"You chose: {choice}")
