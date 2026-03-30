@@ -1,0 +1,29 @@
+from db import init_db, get_db
+from auth import login
+from utils import print_menu, get_input
+
+# Test DB
+init_db()
+print("✓ Database created")
+
+conn = get_db()
+c = conn.cursor()
+c.execute("SELECT name FROM sqlite_master WHERE type='table'")
+tables = [t[0] for t in c.fetchall()]
+print(f"✓ Tables: {tables}")
+conn.close()
+
+# Test Auth
+print("\n--- Test Login ---")
+role = login()
+print(f"Role: {role}")
+
+# Test Utils
+print("\n--- Test Menu ---")
+if role == "admin":
+    menu = ["Manage Bikes", "Manage Customers", "View Rentals", "View Repairs", "Exit"]
+else:
+    menu = ["View Bikes", "Create Rental", "Exit"]
+
+choice = print_menu(menu)
+print(f"You chose: {choice}")
