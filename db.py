@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-DB_NAME = "motorcycle_rental.db"
+DB_NAME = "rental"
 
 def get_db():
     return sqlite3.connect(DB_NAME)
