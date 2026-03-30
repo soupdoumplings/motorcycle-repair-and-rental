@@ -4,14 +4,6 @@ from utils import print_menu, get_input
 
 # Test DB
 init_db()
-print("✓ Database created")
-
-conn = get_db()
-c = conn.cursor()
-c.execute("SELECT name FROM sqlite_master WHERE type='table'")
-tables = [t[0] for t in c.fetchall()]
-print(f"✓ Tables: {tables}")
-conn.close()
 
 # Test Auth
 print("\n--- Test Login ---")
